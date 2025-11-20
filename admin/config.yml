@@ -1,35 +1,17 @@
 backend:
   name: git-gateway
-  branch: main # Переконайтеся, що це назва вашої головної гілки на GitHub
-  
-publish_mode: editorial_workflow
-media_folder: "img/uploads" 
-public_folder: "/img/uploads" 
+  branch: main
+media_folder: "img/uploads"
+public_folder: "img/uploads"
 
 collections:
   - name: "site_settings"
-    label: "Налаштування Сайту (Контакти)"
+    label: "Налаштування сайту"
     files:
-      - label: "Контакти та Загальні Дані"
+      - file: "_data/site.json"
+        label: "Загальні"
         name: "general"
-        file: "_data/site.json" 
         fields:
-          - {label: "Заголовок Сайту", name: "site_title", widget: "string", default: "Карпатський Мед"}
-          - {label: "Телефон (шапка)", name: "phone_header", widget: "string", default: "+38 (097) 000-00-00"}
-          - {label: "Email", name: "email", widget: "string", required: false}
-          - {label: "Посилання Instagram", name: "instagram", widget: "string", required: false}
-          - {label: "Посилання Facebook", name: "facebook", widget: "string", required: false}
-
-  - name: "products"
-    label: "Каталог Товарів"
-    folder: "_data/products"
-    create: true
-    slug: "{{title}}"
-    fields:
-      - {label: "Назва Меду", name: "title", widget: "string"}
-      - {label: "Категорія/Мітка", name: "category", widget: "string"}
-      - {label: "Ціна (₴)", name: "price", widget: "number", value_type: "int"}
-      - {label: "Збір (Місяць та Рік)", name: "harvest_date", widget: "string"}
-      - {label: "Об'єм (л)", name: "volume", widget: "string"}
-      - {label: "Опис товару", name: "description", widget: "markdown"}
-      - {label: "Фотографії", name: "images", widget: "list", fields: [{label: "Файл Фото", name: "image", widget: "image"}]}
+          - label: "Заголовок сайту"
+            name: "site_title"
+            widget: "string"
