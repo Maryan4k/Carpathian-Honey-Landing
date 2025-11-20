@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: main # Переконайтеся, що це назва вашої головної гілки на GitHub
   
-publish_mode: editorial_workflow # Дозволяє створювати чернетки перед публікацією
-media_folder: "img/uploads" # Куди завантажуються нові фото
-public_folder: "/img/uploads" # Шлях до папки в браузері
+publish_mode: editorial_workflow
+media_folder: "img/uploads" 
+public_folder: "/img/uploads" 
 
 collections:
   - name: "site_settings"
@@ -12,7 +12,7 @@ collections:
     files:
       - label: "Контакти та Загальні Дані"
         name: "general"
-        file: "_data/site.json" # Шлях до файлу, де будуть зберігатися контакти
+        file: "_data/site.json" 
         fields:
           - {label: "Заголовок Сайту", name: "site_title", widget: "string", default: "Карпатський Мед"}
           - {label: "Телефон (шапка)", name: "phone_header", widget: "string", default: "+38 (097) 000-00-00"}
